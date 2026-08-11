@@ -1,0 +1,136 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --color-azul-oscuro: #16215c;
+  --color-azul: #1e3a8a;
+  --color-naranja: #f97316;
+  --color-naranja-hover: #ea580c;
+}
+
+html, body, #root { margin: 0; padding: 0; width: 100%; min-height: 100%; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+
+.pantalla-login {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 2rem 1rem;
+  background: linear-gradient(160deg, var(--color-azul) 0%, var(--color-azul-oscuro) 100%);
+}
+.login-icono {
+  width: 72px; height: 72px; border-radius: 18px; background: var(--color-naranja);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+}
+.login-titulo { color: #fff; font-weight: 700; margin-bottom: 0.25rem; }
+.login-subtitulo { color: #cbd5f5; text-align: center; margin-bottom: 2rem; font-size: 0.95rem; }
+.login-tarjeta { background: #fff; border-radius: 16px; padding: 2rem; width: 100%; max-width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
+
+.btn-naranja { background-color: var(--color-naranja); border-color: var(--color-naranja); font-weight: 600; padding: 0.65rem 1rem; }
+.btn-naranja:hover, .btn-naranja:focus { background-color: var(--color-naranja-hover); border-color: var(--color-naranja-hover); }
+.btn-azul { background-color: var(--color-azul-oscuro); border-color: var(--color-azul-oscuro); color: #fff; font-weight: 600; }
+.btn-azul:hover { background-color: #101a4a; color: #fff; }
+
+.layout-admin { display: flex; min-height: 100vh; background: #f4f6fb; }
+.sidebar { width: 240px; background: var(--color-azul-oscuro); padding: 1.25rem 1rem; flex-shrink: 0; }
+.sidebar-marca-icono { width: 36px; height: 36px; border-radius: 8px; background: var(--color-naranja); display: flex; align-items: center; justify-content: center; }
+.sidebar-marca-texto { color: #fff; font-weight: 700; line-height: 1.1; font-size: 0.95rem; }
+.sidebar-marca-acento { color: var(--color-naranja); }
+.sidebar-rol { color: #93a3d1; font-size: 0.7rem; letter-spacing: 0.05em; margin: 1.5rem 0 0.5rem 0.25rem; }
+.sidebar-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.75rem; border-radius: 8px; color: #cbd5f5; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.25rem; border: none; background: none; width: 100%; text-align: left; }
+.sidebar-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.sidebar-item-activo { background: var(--color-naranja); color: #fff; }
+.sidebar-cerrar { color: #f97070; margin-top: auto; }
+.layout-admin-contenido { flex-grow: 1; min-width: 0; }
+
+.topbar { background: #fff; border-bottom: 1px solid #e5e9f2; padding: 1rem 1.5rem; }
+.topbar-fecha { color: #94a3b8; font-size: 0.85rem; }
+.topbar-campana { position: relative; color: var(--color-naranja); }
+.topbar-punto-rojo { position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; }
+.topbar-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--color-azul-oscuro); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.topbar-nombre { font-size: 0.85rem; font-weight: 600; }
+.topbar-subrol { font-size: 0.75rem; color: #94a3b8; }
+
+.tarjeta-stat { background: #fff; border-radius: 12px; padding: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.tarjeta-stat-icono { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; }
+.tarjeta-stat-icono-azul { background: #e0edff; color: #2563eb; }
+.tarjeta-stat-icono-morado { background: #f2e8ff; color: #9333ea; }
+.tarjeta-stat-icono-verde { background: #e3f9ec; color: #16a34a; }
+.tarjeta-stat-icono-naranja { background: #ffece0; color: #f97316; }
+.tarjeta-stat-icono-rojo { background: #fde2e2; color: #ef4444; }
+.tarjeta-stat-valor { font-size: 1.5rem; font-weight: 700; }
+.tarjeta-stat-etiqueta { color: #94a3b8; font-size: 0.8rem; }
+
+.panel-blanco { background: #fff; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); height: 100%; }
+.alerta-stock-item { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid #f1f3f9; }
+.badge-stock-bajo { background: #fde2e2; color: #ef4444; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 999px; }
+.badge-normal { background: #e3f9ec; color: #16a34a; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 999px; }
+.badge-categoria { background: #e0edff; color: #2563eb; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px; }
+
+.modal-fondo { position: fixed; inset: 0; background: rgba(15,23,42,0.5); display: flex; align-items: center; justify-content: center; z-index: 1050; padding: 1rem; }
+.modal-caja { background: #fff; border-radius: 12px; padding: 1.5rem; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; }
+.modal-caja-angosta { max-width: 420px; }
+
+.posicion-relativa { position: relative; }
+.lista-sugerencias { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid #e5e9f2; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 10; max-height: 220px; overflow-y: auto; }
+.sugerencia-item { display: block; width: 100%; text-align: left; padding: 0.6rem 0.85rem; border: none; background: none; font-size: 0.9rem; }
+.sugerencia-item:hover { background: #f4f6fb; }
+
+.tabla-reporte-encabezado th {
+  background: var(--color-azul-oscuro);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.75rem;
+}
+
+.tarjeta-stat-borde {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid transparent;
+}
+
+.tarjeta-stat-borde-naranja { border-left-color: var(--color-naranja); }
+.tarjeta-stat-borde-azul { border-left-color: #2563eb; }
+.tarjeta-stat-borde-verde { border-left-color: #16a34a; }
+
+.tarjeta-stat-borde .tarjeta-stat-etiqueta {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.tarjeta-stat-borde .tarjeta-stat-valor {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.text-naranja { color: var(--color-naranja); }
+
+.alerta-stock-banner {
+  background: #fde2e2;
+  color: #b91c1c;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.icono-exito {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: #e3f9ec; display: flex; align-items: center; justify-content: center;
+}
+
+.badge-comprobante-tipo {
+  background: var(--color-naranja);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+
+@media print {
+  .sidebar, .topbar, .no-imprimir { display: none !important; }
+  .comprobante-imprimible { box-shadow: none !important; }
+}
