@@ -7,6 +7,11 @@ const pool = mysql.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+
+    ssl: {
+        rejectUnauthorized: false
+    },
+
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -15,10 +20,12 @@ const pool = mysql.createPool({
 async function verificarConexion() {
     try {
         const conexion = await pool.getConnection();
-        console.log('Conexión a MySQL establecida correctamente.');
+
+        console.log('Conexión a Aiven MySQL establecida correctamente.');
+
         conexion.release();
     } catch (error) {
-        console.error('Error al conectar con MySQL:', error.message);
+        console.error('Error al conectar con Aiven MySQL:', error.message);
     }
 }
 
